@@ -16,7 +16,7 @@ function Performance() {
     setShowResult(false);
   }, []);
   useEffect(() => {
-    fetch('http://localhost:3001/api/comments/performance')
+    fetch('http://tate-mcrae-journey.onrender.com/api/comments/performance')
       .then(res => res.json())
       .then(data => setComments(data))
       .catch(err => console.error(err));
@@ -51,7 +51,7 @@ function Performance() {
       return;
     }
     if (textToPost.trim()) {
-      fetch('http://localhost:3001/api/comments', {
+      fetch('http://tate-mcrae-journey.onrender.com/api/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ page: 'performance', name: userName, text: textToPost })
