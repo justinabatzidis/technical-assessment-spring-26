@@ -15,7 +15,7 @@ function DanceRoots() {
     setShowResult(false);
   }, []);
     useEffect(() => {
-    fetch('http://tate-mcrae-journey.onrender.com/api/comments/dance-roots')
+    fetch('https://tate-mcrae-journey.onrender.com/api/comments/dance-roots')
       .then(res => res.json())
       .then(data => setComments(data))
       .catch(err => console.error(err));
@@ -51,7 +51,7 @@ function DanceRoots() {
       return;
     }
     if (textToPost.trim()) {
-      fetch('http://tate-mcrae-journey.onrender.com/api/comments', {
+      fetch('https://tate-mcrae-journey.onrender.com/api/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ page: 'dance-roots', name: userName, text: textToPost })

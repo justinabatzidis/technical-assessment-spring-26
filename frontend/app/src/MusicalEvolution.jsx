@@ -11,12 +11,12 @@ function MusicalEvolution() {
     setUserName(''); 
   }, []);
   useEffect(() => {
-    fetch('http://tate-mcrae-journey.onrender.com/api/poll/favorite-song')
+    fetch('https://tate-mcrae-journey.onrender.com/api/poll/favorite-song')
       .then(res => res.json())
       .then(data => setPoll(data))
       .catch(err => console.error(err));
 
-    fetch('http://tate-mcrae-journey.onrender.com/api/comments/musical-evolution')
+    fetch('https://tate-mcrae-journey.onrender.com/api/comments/musical-evolution')
       .then(res => res.json())
       .then(data => setComments(data))
       .catch(err => console.error(err));
@@ -38,7 +38,7 @@ function MusicalEvolution() {
       setShowNamePrompt(true);
       return;
     }
-    fetch('http://tate-mcrae-journey.onrender.com/api/poll/vote', {
+    fetch('https://tate-mcrae-journey.onrender.com/api/poll/vote', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ questionId: 'favorite-song', option, userName })
@@ -60,7 +60,7 @@ function MusicalEvolution() {
       return;
     }
     if (textToPost.trim()) {
-      fetch('http://tate-mcrae-journey.onrender.com/api/comments', {
+      fetch('https://tate-mcrae-journey.onrender.com/api/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ page: 'musical-evolution', name: userName, text: textToPost })
